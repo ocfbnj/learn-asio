@@ -1,0 +1,12 @@
+# VS Code
+/.vscode
+/build
+
+# MSVC
+/.vs
+/out
+/CMakeSettings.json
+
+# CLion
+/.idea
+/cmake-build-*
