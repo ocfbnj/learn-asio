@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(learn-asio INTERFACE)
 target_include_directories(learn-asio INTERFACE ${CMAKE_SOURCE_DIR}/include)
 if(UNIX)
+    target_compile_options(learn-asio INTERFACE -fcoroutines)
     target_link_libraries(learn-asio INTERFACE pthread)
 endif()
 
