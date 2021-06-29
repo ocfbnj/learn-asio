@@ -33,9 +33,11 @@ public:
 
     // Status returned by perform function. May be used to decide whether it is
     // worth performing more operations on the descriptor immediately.
-    enum status { not_done,
-                  done,
-                  done_and_exhausted };
+    enum status {
+        not_done,
+        done,
+        done_and_exhausted
+    };
 
     // Perform the operation. Returns true if it is finished.
     status perform() {
