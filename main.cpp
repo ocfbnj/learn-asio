@@ -14,8 +14,8 @@ int main() {
             char buf[] = "GET / HTTP/1.0\r\n\r\n";
             socket.async_send(net::buffer(buf), [&](std::error_code err, std::size_t n) {
                 if (!err) {
-                    char buf[32768]{};
-                    socket.async_receive(net::buffer(buf), [&](std::error_code err, std::size_t n){
+                    char buf[4096]{};
+                    socket.async_receive(net::buffer(buf), [&](std::error_code err, std::size_t n) {
                         if (!err) {
                             std::cout << buf;
                         } else {
