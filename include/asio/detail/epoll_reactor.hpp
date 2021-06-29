@@ -41,8 +41,7 @@
 namespace asio {
 namespace detail {
 
-class epoll_reactor
-    : public execution_context_service_base<epoll_reactor> {
+class epoll_reactor : public execution_context_service_base<epoll_reactor> {
 private:
     // The mutex type used by this reactor.
     typedef conditionally_enabled_mutex mutex;
