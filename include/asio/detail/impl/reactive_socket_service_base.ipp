@@ -35,8 +35,7 @@ reactive_socket_service_base::reactive_socket_service_base(
 void reactive_socket_service_base::base_shutdown() {
 }
 
-void reactive_socket_service_base::construct(
-    reactive_socket_service_base::base_implementation_type& impl) {
+void reactive_socket_service_base::construct(reactive_socket_service_base::base_implementation_type& impl) {
     impl.socket_ = invalid_socket;
     impl.state_ = 0;
 }
