@@ -62,6 +62,8 @@ class basic_socket;
  * @e Distinct @e objects: Safe.@n
  * @e Shared @e objects: Unsafe.
  */
+
+// 接口类，调用方法将全部转移到IoService
 template <typename Protocol, typename Executor>
 class basic_socket : public socket_base {
 public:

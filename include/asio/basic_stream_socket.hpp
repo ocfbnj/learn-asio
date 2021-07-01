@@ -55,6 +55,8 @@ class basic_stream_socket;
  * @par Concepts:
  * AsyncReadStream, AsyncWriteStream, Stream, SyncReadStream, SyncWriteStream.
  */
+
+// 接口类，调用方法将全部转移到IoService
 template <typename Protocol, typename Executor>
 class basic_stream_socket : public basic_socket<Protocol, Executor> {
 public:
