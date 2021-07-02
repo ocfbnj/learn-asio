@@ -80,9 +80,7 @@ public:
         ASIO_HANDLER_COMPLETION((*o));
 
         // Take ownership of the operation's outstanding work.
-        handler_work<Handler, IoExecutor> w(
-            ASIO_MOVE_CAST2(handler_work<Handler, IoExecutor>)(
-                o->work_));
+        handler_work<Handler, IoExecutor> w(ASIO_MOVE_CAST2(handler_work<Handler, IoExecutor>)(o->work_));
 
         // Make a copy of the handler so that the memory can be deallocated before
         // the upcall is made. Even if we're not about to make an upcall, a
@@ -90,8 +88,7 @@ public:
         // with the handler. Consequently, a local copy of the handler is required
         // to ensure that any owning sub-object remains valid until after we have
         // deallocated the memory here.
-        detail::binder1<Handler, asio::error_code>
-            handler(o->handler_, o->ec_);
+        detail::binder1<Handler, asio::error_code> handler(o->handler_, o->ec_);
         p.h = asio::detail::addressof(handler.handler_);
         p.reset();
 
